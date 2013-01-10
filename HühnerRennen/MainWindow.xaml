@@ -1,0 +1,9 @@
+﻿<Window x:Class="HühnerRennen.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="507" Width="739">
+    <Grid>
+        <Canvas HorizontalAlignment="Left" Height="310" Margin="10,59,0,0" VerticalAlignment="Top" Width="436"/>
+
+    </Grid>
+</Window>
