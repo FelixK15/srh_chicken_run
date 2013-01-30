@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Collections.ObjectModel;
+using System.Media;
 
 namespace HühnerRennen
 {
@@ -29,6 +30,7 @@ namespace HühnerRennen
         private Player[] m_players = new Player[4];
         private Chicken m_winnerChicken = null;
         private Chicken m_curBidChicken = null;
+        private SoundPlayer m_soundPlayer = null;
 
         public MainWindow()
         {
@@ -111,8 +113,16 @@ namespace HühnerRennen
         {
             string winString = "";
             string playerWinner = "";
+
+            //Alten Sound anhalten.
+            m_soundPlayer.Stop();
+
             //Diese Funktion wird aufgerufen, nachdem ein Rennen gewonnen wurde.
             Thread.Sleep(2000); //Warte etwas, damit nicht SOFORT unterbrochen wird.
+
+            //Neuen Sound laden und abspielen.
+            m_soundPlayer = new SoundPlayer("winner.wav");
+            m_soundPlayer.Play();
 
             m_winnerChicken.WonRaces = m_winnerChicken.WonRaces + 1;
             winString += m_winnerChicken.Name + " hat das Rennen gewonnen!\n";
@@ -288,6 +298,8 @@ namespace HühnerRennen
             tcPlayers.IsEnabled = false;
             bnStartRennen.IsEnabled = false;
 
+            m_soundPlayer = new SoundPlayer("chicken.wav");
+            m_soundPlayer.PlayLooping();
             m_timer.Start();
         }
 

@@ -8,8 +8,8 @@
             <TabItem Header="{Binding ElementName=txNamePl1, Path=Text}">
                 <Grid>
                     <CheckBox Content="Enabled" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Name="chkEnabledPl1"/>
-                    <RadioButton Content="Computer" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" IsEnabled="{Binding ElementName=chkEnabledPl1, Path=IsChecked}"/>
-                    <RadioButton Content="Mensch" HorizontalAlignment="Left" Margin="112,71,0,0" VerticalAlignment="Top" IsEnabled="{Binding ElementName=chkEnabledPl1, Path=IsChecked}"/>
+                    <RadioButton Visibility="Hidden" Content="Computer" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" IsEnabled="{Binding ElementName=chkEnabledPl1, Path=IsChecked}"/>
+                    <RadioButton Visibility="Hidden" Content="Mensch" HorizontalAlignment="Left" Margin="112,71,0,0" VerticalAlignment="Top" IsEnabled="{Binding ElementName=chkEnabledPl1, Path=IsChecked}"/>
                     <TextBox Name="txNamePl1" Tag="Pl1"  HorizontalAlignment="Left" Height="23" Margin="59,43,0,0" TextWrapping="Wrap" Text="Player 1" VerticalAlignment="Top" Width="135" IsEnabled="{Binding ElementName=chkEnabledPl1, Path=IsChecked}" TextChanged="txName_TextChanged"/>
                     <Label Content="Name:" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" IsEnabled="{Binding ElementName=chkEnabledPl1, Path=IsChecked}"/>
                     <Label Content="Guthaben:" HorizontalAlignment="Left" Margin="218,21,0,0" VerticalAlignment="Top" IsEnabled="{Binding ElementName=chkEnabledPl1, Path=IsChecked}"/>
@@ -24,8 +24,8 @@
             <TabItem Header="{Binding ElementName=txNamePl2, Path=Text}">
                 <Grid>
                     <CheckBox Content="Enabled" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" x:Name="chkEnabledPl2"/>
-                    <RadioButton Content="Computer" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}"/>
-                    <RadioButton Content="Mensch" HorizontalAlignment="Left" Margin="112,71,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}"/>
+                    <RadioButton Visibility="Hidden" Content="Computer" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}"/>
+                    <RadioButton Visibility="Hidden" Content="Mensch" HorizontalAlignment="Left" Margin="112,71,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}"/>
                     <TextBox Name="txNamePl2" Tag="Pl2"  HorizontalAlignment="Left" Height="23" Margin="59,43,0,0" TextWrapping="Wrap" Text="Player 2" VerticalAlignment="Top" Width="135" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}" TextChanged="txName_TextChanged"/>
                     <Label Content="Name:" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}"/>
                     <Label Content="Guthaben:" HorizontalAlignment="Left" Margin="218,21,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}"/>
@@ -41,8 +41,8 @@
             <TabItem Header="{Binding ElementName=txNamePl3, Path=Text}">
                 <Grid>
                     <CheckBox Content="Enabled" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" x:Name="chkEnabledPl3"/>
-                    <RadioButton Content="Computer" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}"/>
-                    <RadioButton Content="Mensch" HorizontalAlignment="Left" Margin="112,71,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}"/>
+                    <RadioButton Visibility="Hidden" Content="Computer" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}"/>
+                    <RadioButton Visibility="Hidden" Content="Mensch" HorizontalAlignment="Left" Margin="112,71,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}"/>
                     <TextBox Name="txNamePl3" Tag="Pl3"  HorizontalAlignment="Left" Height="23" Margin="59,43,0,0" TextWrapping="Wrap" Text="Player 3" VerticalAlignment="Top" Width="135" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}" TextChanged="txName_TextChanged"/>
                     <Label Content="Name:" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}"/>
                     <Label Content="Guthaben:" HorizontalAlignment="Left" Margin="218,21,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}"/>
@@ -58,8 +58,8 @@
             <TabItem Header="{Binding ElementName=txNamePl4, Path=Text}">
                 <Grid>
                     <CheckBox Content="Enabled" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" x:Name="chkEnabledPl4"/>
-                    <RadioButton Content="Computer" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}"/>
-                    <RadioButton Content="Mensch" HorizontalAlignment="Left" Margin="112,71,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}"/>
+                    <RadioButton Visibility="Hidden" Content="Computer" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}"/>
+                    <RadioButton Visibility="Hidden" Content="Mensch" HorizontalAlignment="Left" Margin="112,71,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}"/>
                     <TextBox Name="txNamePl4" Tag="Pl4"  HorizontalAlignment="Left" Height="23" Margin="59,43,0,0" TextWrapping="Wrap" Text="Player 4" VerticalAlignment="Top" Width="135" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}" TextChanged="txName_TextChanged"/>
                     <Label Content="Name:" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}"/>
                     <Label Content="Guthaben:" HorizontalAlignment="Left" Margin="218,21,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}"/>
