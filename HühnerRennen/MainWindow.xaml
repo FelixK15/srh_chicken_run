@@ -1,9 +1,179 @@
 ﻿<Window x:Class="HühnerRennen.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="507" Width="739">
-    <Grid>
-        <Canvas HorizontalAlignment="Left" Height="310" Margin="10,59,0,0" VerticalAlignment="Top" Width="436"/>
+        Title="MainWindow" Height="420.836" Width="1165.866">
+    <Grid Height="422" VerticalAlignment="Top">
+        <Canvas HorizontalAlignment="Left" Height="310" Margin="10,10,0,0" VerticalAlignment="Top" Width="503" Name="cvGame"/>
+        <TabControl Name="tcPlayers" HorizontalAlignment="Left" Height="146" Margin="543,41,0,0" VerticalAlignment="Top" Width="481">
+            <TabItem Header="{Binding ElementName=txNamePl1, Path=Text}">
+                <Grid>
+                    <CheckBox Content="Enabled" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Name="chkEnabledPl1"/>
+                    <RadioButton Content="Computer" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" IsEnabled="{Binding ElementName=chkEnabledPl1, Path=IsChecked}"/>
+                    <RadioButton Content="Mensch" HorizontalAlignment="Left" Margin="112,71,0,0" VerticalAlignment="Top" IsEnabled="{Binding ElementName=chkEnabledPl1, Path=IsChecked}"/>
+                    <TextBox Name="txNamePl1" Tag="Pl1"  HorizontalAlignment="Left" Height="23" Margin="59,43,0,0" TextWrapping="Wrap" Text="Player 1" VerticalAlignment="Top" Width="135" IsEnabled="{Binding ElementName=chkEnabledPl1, Path=IsChecked}" TextChanged="txName_TextChanged"/>
+                    <Label Content="Name:" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" IsEnabled="{Binding ElementName=chkEnabledPl1, Path=IsChecked}"/>
+                    <Label Content="Guthaben:" HorizontalAlignment="Left" Margin="218,21,0,0" VerticalAlignment="Top" IsEnabled="{Binding ElementName=chkEnabledPl1, Path=IsChecked}"/>
+                    <Label Content="0.0$" Name="lbGuthabenPl1" HorizontalAlignment="Left" Margin="288,22,0,0" VerticalAlignment="Top" Width="81" IsEnabled="{Binding ElementName=chkEnabledPl1, Path=IsChecked}"/>
+                    <Label Content="Gewinn:" HorizontalAlignment="Left" Margin="218,47,0,0" VerticalAlignment="Top" Width="65" IsEnabled="{Binding ElementName=chkEnabledPl1, Path=IsChecked}"/>
+                    <Label Content="0.0$" Name="lbGewinnPl1" HorizontalAlignment="Left" Margin="288,47,0,0" VerticalAlignment="Top" IsEnabled="{Binding ElementName=chkEnabledPl1, Path=IsChecked}"/>
+                    <Label Content="Verlust:" HorizontalAlignment="Left" Margin="218,71,0,0" VerticalAlignment="Top" Width="65" IsEnabled="{Binding ElementName=chkEnabledPl1, Path=IsChecked}"/>
+                    <Label Content="0.0$" Name="lbVerlustPl1" HorizontalAlignment="Left" Margin="288,71,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.421,0.538" IsEnabled="{Binding ElementName=chkEnabledPl1, Path=IsChecked}"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="{Binding ElementName=txNamePl2, Path=Text}">
+                <Grid>
+                    <CheckBox Content="Enabled" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" x:Name="chkEnabledPl2"/>
+                    <RadioButton Content="Computer" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}"/>
+                    <RadioButton Content="Mensch" HorizontalAlignment="Left" Margin="112,71,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}"/>
+                    <TextBox Name="txNamePl2" Tag="Pl2"  HorizontalAlignment="Left" Height="23" Margin="59,43,0,0" TextWrapping="Wrap" Text="Player 2" VerticalAlignment="Top" Width="135" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}" TextChanged="txName_TextChanged"/>
+                    <Label Content="Name:" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}"/>
+                    <Label Content="Guthaben:" HorizontalAlignment="Left" Margin="218,21,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}"/>
+                    <Label Content="0.0$" x:Name="lbGuthabenPl2" HorizontalAlignment="Left" Margin="288,22,0,0" VerticalAlignment="Top" Width="81" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}"/>
+                    <Label Content="Gewinn:" HorizontalAlignment="Left" Margin="218,47,0,0" VerticalAlignment="Top" Width="65" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}"/>
+                    <Label Content="0.0$" x:Name="lbGewinnPl2" HorizontalAlignment="Left" Margin="288,47,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}"/>
+                    <Label Content="Verlust:" HorizontalAlignment="Left" Margin="218,71,0,0" VerticalAlignment="Top" Width="65" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}"/>
+                    <Label Content="0.0$" x:Name="lbVerlustPl2" HorizontalAlignment="Left" Margin="288,71,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.421,0.538" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}"/>
+
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="{Binding ElementName=txNamePl3, Path=Text}">
+                <Grid>
+                    <CheckBox Content="Enabled" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" x:Name="chkEnabledPl3"/>
+                    <RadioButton Content="Computer" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}"/>
+                    <RadioButton Content="Mensch" HorizontalAlignment="Left" Margin="112,71,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}"/>
+                    <TextBox Name="txNamePl3" Tag="Pl3"  HorizontalAlignment="Left" Height="23" Margin="59,43,0,0" TextWrapping="Wrap" Text="Player 3" VerticalAlignment="Top" Width="135" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}" TextChanged="txName_TextChanged"/>
+                    <Label Content="Name:" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}"/>
+                    <Label Content="Guthaben:" HorizontalAlignment="Left" Margin="218,21,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}"/>
+                    <Label Content="0.0$" x:Name="lbGuthabenPl3" HorizontalAlignment="Left" Margin="288,22,0,0" VerticalAlignment="Top" Width="81" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}"/>
+                    <Label Content="Gewinn:" HorizontalAlignment="Left" Margin="218,47,0,0" VerticalAlignment="Top" Width="65" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}"/>
+                    <Label Content="0.0$" x:Name="lbGewinnPl3" HorizontalAlignment="Left" Margin="288,47,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}"/>
+                    <Label Content="Verlust:" HorizontalAlignment="Left" Margin="218,71,0,0" VerticalAlignment="Top" Width="65" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}"/>
+                    <Label Content="0.0$" x:Name="lbVerlustPl3" HorizontalAlignment="Left" Margin="288,71,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.421,0.538" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}"/>
+
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="{Binding ElementName=txNamePl4, Path=Text}">
+                <Grid>
+                    <CheckBox Content="Enabled" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" x:Name="chkEnabledPl4"/>
+                    <RadioButton Content="Computer" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}"/>
+                    <RadioButton Content="Mensch" HorizontalAlignment="Left" Margin="112,71,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}"/>
+                    <TextBox Name="txNamePl4" Tag="Pl4"  HorizontalAlignment="Left" Height="23" Margin="59,43,0,0" TextWrapping="Wrap" Text="Player 4" VerticalAlignment="Top" Width="135" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}" TextChanged="txName_TextChanged"/>
+                    <Label Content="Name:" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}"/>
+                    <Label Content="Guthaben:" HorizontalAlignment="Left" Margin="218,21,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}"/>
+                    <Label Content="0.0$" x:Name="lbGuthabenPl4" HorizontalAlignment="Left" Margin="288,22,0,0" VerticalAlignment="Top" Width="81" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}"/>
+                    <Label Content="Gewinn:" HorizontalAlignment="Left" Margin="218,47,0,0" VerticalAlignment="Top" Width="65" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}"/>
+                    <Label Content="0.0$" x:Name="lbGewinnPl4" HorizontalAlignment="Left" Margin="288,47,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}"/>
+                    <Label Content="Verlust:" HorizontalAlignment="Left" Margin="218,71,0,0" VerticalAlignment="Top" Width="65" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}"/>
+                    <Label Content="0.0$" x:Name="lbVerlustPl4" HorizontalAlignment="Left" Margin="288,71,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.421,0.538" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}"/>
+
+                </Grid>
+
+            </TabItem>
+        </TabControl>
+        <TabControl Name="tcChickens" HorizontalAlignment="Left" Height="159" Margin="543,218,0,0" VerticalAlignment="Top" Width="481" SelectionChanged="TabControl_SelectionChanged_1">
+            <TabItem Header="Karl" Tag="C1">
+                <Grid>
+                    <Label Content="Wette Player 1" HorizontalAlignment="Left" Margin="0,13,0,0" VerticalAlignment="Top" IsEnabled="{Binding ElementName=chkEnabledPl1, Path=IsChecked}"/>
+                    <Label Content="Wette Player 2" HorizontalAlignment="Left" Margin="0,39,0,0" VerticalAlignment="Top" IsEnabled="{Binding ElementName=chkEnabledPl2, Path=IsChecked}"/>
+                    <Label Content="Wette Player 3" HorizontalAlignment="Left" Margin="0,65,0,0" VerticalAlignment="Top" IsEnabled="{Binding ElementName=chkEnabledPl3, Path=IsChecked}"/>
+                    <Label Content="Wette Player 4" HorizontalAlignment="Left" Margin="0,91,0,0" VerticalAlignment="Top" IsEnabled="{Binding ElementName=chkEnabledPl4, Path=IsChecked}"/>
+                    <TextBox Name="txWetteC1Pl1" Tag="Pl1" HorizontalAlignment="Left" Height="23" Margin="87,16,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="87" IsEnabled="{Binding ElementName=chkEnabledPl1, Path=IsChecked}" PreviewTextInput="txWette_PreviewTextInput" TextChanged="txWette_TextChanged"/>
+                    <TextBox Name="txWetteC1Pl2" Tag="Pl2" HorizontalAlignment="Left" Height="23" Margin="87,42,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="87" IsEnabled="{Binding ElementName=chkEnabledPl2, Path=IsChecked}" PreviewTextInput="txWette_PreviewTextInput" TextChanged="txWette_TextChanged"/>
+                    <TextBox Name="txWetteC1Pl3" Tag="Pl3" HorizontalAlignment="Left" Height="23" Margin="87,67,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="87" IsEnabled="{Binding ElementName=chkEnabledPl3, Path=IsChecked}" PreviewTextInput="txWette_PreviewTextInput" TextChanged="txWette_TextChanged"/>
+                    <TextBox Name="txWetteC1Pl4" Tag="Pl4" HorizontalAlignment="Left" Height="23" Margin="87,93,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="87" IsEnabled="{Binding ElementName=chkEnabledPl4, Path=IsChecked}" PreviewTextInput="txWette_PreviewTextInput" TextChanged="txWette_TextChanged"/>
+                    <Label Content="$" HorizontalAlignment="Left" Margin="174,13,0,0" VerticalAlignment="Top" IsEnabled="{Binding ElementName=chkEnabledPl1, Path=IsChecked}"/>
+                    <Label Content="$" HorizontalAlignment="Left" Margin="174,39,0,0" VerticalAlignment="Top" IsEnabled="{Binding ElementName=chkEnabledPl2, Path=IsChecked}"/>
+                    <Label Content="$" HorizontalAlignment="Left" Margin="174,65,0,0" VerticalAlignment="Top" IsEnabled="{Binding ElementName=chkEnabledPl3, Path=IsChecked}"/>
+                    <Label Content="$" HorizontalAlignment="Left" Margin="174,91,0,0" VerticalAlignment="Top" IsEnabled="{Binding ElementName=chkEnabledPl4, Path=IsChecked}"/>
+                    <Label Content="Gewonnene Rennen:" HorizontalAlignment="Left" Margin="216,13,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Verlorene Rennen:" HorizontalAlignment="Left" Margin="216,42,0,0" VerticalAlignment="Top" Width="119"/>
+                    <Label Content="Bisher gesetzt wurden:" HorizontalAlignment="Left" Margin="216,90,0,0" VerticalAlignment="Top"/>
+                    <Label Content="0" Name="lbC1GewonneneRennen" HorizontalAlignment="Left" Margin="335,16,0,0" VerticalAlignment="Top"/>
+                    <Label Content="0" Name="lbC1VerloreneRennen" HorizontalAlignment="Left" Margin="335,40,0,0" VerticalAlignment="Top"/>
+                    <Label Content="0.0$" Name="lbC1GesetztesGeld" HorizontalAlignment="Left" Margin="350,90,0,0" VerticalAlignment="Top"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Agathe" Tag="C2">
+                <Grid>
+                    <Label Content="Wette Player 1" HorizontalAlignment="Left" Margin="0,13,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl1}"/>
+                    <Label Content="Wette Player 2" HorizontalAlignment="Left" Margin="0,39,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}"/>
+                    <Label Content="Wette Player 3" HorizontalAlignment="Left" Margin="0,65,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}"/>
+                    <Label Content="Wette Player 4" HorizontalAlignment="Left" Margin="0,91,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}"/>
+                    <TextBox x:Name="txWetteC2Pl1" Tag="Pl1" HorizontalAlignment="Left" Height="23" Margin="87,16,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="87" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl1}" PreviewTextInput="txWette_PreviewTextInput" TextChanged="txWette_TextChanged"/>
+                    <TextBox x:Name="txWetteC2Pl2" Tag="Pl2" HorizontalAlignment="Left" Height="23" Margin="87,42,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="87" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}" PreviewTextInput="txWette_PreviewTextInput" TextChanged="txWette_TextChanged"/>
+                    <TextBox x:Name="txWetteC2Pl3" Tag="Pl3" HorizontalAlignment="Left" Height="23" Margin="87,67,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="87" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}" PreviewTextInput="txWette_PreviewTextInput" TextChanged="txWette_TextChanged"/>
+                    <TextBox x:Name="txWetteC2Pl4" Tag="Pl4" HorizontalAlignment="Left" Height="23" Margin="87,93,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="87" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}" PreviewTextInput="txWette_PreviewTextInput" TextChanged="txWette_TextChanged"/>
+                    <Label Content="$" HorizontalAlignment="Left" Margin="174,13,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl1}"/>
+                    <Label Content="$" HorizontalAlignment="Left" Margin="174,39,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}"/>
+                    <Label Content="$" HorizontalAlignment="Left" Margin="174,65,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}"/>
+                    <Label Content="$" HorizontalAlignment="Left" Margin="174,91,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}"/>
+                    <Label Content="Gewonnene Rennen:" HorizontalAlignment="Left" Margin="216,13,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Verlorene Rennen:" HorizontalAlignment="Left" Margin="216,42,0,0" VerticalAlignment="Top" Width="119"/>
+                    <Label Content="Bisher gesetzt wurden:" HorizontalAlignment="Left" Margin="216,90,0,0" VerticalAlignment="Top"/>
+                    <Label Content="0" x:Name="lbC2GewonneneRennen" HorizontalAlignment="Left" Margin="335,16,0,0" VerticalAlignment="Top"/>
+                    <Label Content="0" x:Name="lbC2VerloreneRennen" HorizontalAlignment="Left" Margin="335,40,0,0" VerticalAlignment="Top"/>
+                    <Label Content="0.0$" x:Name="lbC2GesetztesGeld" HorizontalAlignment="Left" Margin="350,90,0,0" VerticalAlignment="Top"/>
+
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Sören" Tag="C3">
+                <Grid>
+                    <Label Content="Wette Player 1" HorizontalAlignment="Left" Margin="0,13,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl1}"/>
+                    <Label Content="Wette Player 2" HorizontalAlignment="Left" Margin="0,39,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}"/>
+                    <Label Content="Wette Player 3" HorizontalAlignment="Left" Margin="0,65,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}"/>
+                    <Label Content="Wette Player 4" HorizontalAlignment="Left" Margin="0,91,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}"/>
+                    <TextBox x:Name="txWetteC3Pl1" Tag="Pl1" HorizontalAlignment="Left" Height="23" Margin="87,16,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="87" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl1}" PreviewTextInput="txWette_PreviewTextInput" TextChanged="txWette_TextChanged"/>
+                    <TextBox x:Name="txWetteC3Pl2" Tag="Pl2" HorizontalAlignment="Left" Height="23" Margin="87,42,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="87" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}" PreviewTextInput="txWette_PreviewTextInput" TextChanged="txWette_TextChanged"/>
+                    <TextBox x:Name="txWetteC3Pl3" Tag="Pl3" HorizontalAlignment="Left" Height="23" Margin="87,67,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="87" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}" PreviewTextInput="txWette_PreviewTextInput" TextChanged="txWette_TextChanged"/>
+                    <TextBox x:Name="txWetteC3Pl4" Tag="Pl4" HorizontalAlignment="Left" Height="23" Margin="87,93,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="87" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}" PreviewTextInput="txWette_PreviewTextInput" TextChanged="txWette_TextChanged"/>
+                    <Label Content="$" HorizontalAlignment="Left" Margin="174,13,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl1}"/>
+                    <Label Content="$" HorizontalAlignment="Left" Margin="174,39,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}"/>
+                    <Label Content="$" HorizontalAlignment="Left" Margin="174,65,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}"/>
+                    <Label Content="$" HorizontalAlignment="Left" Margin="174,91,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}"/>
+                    <Label Content="Gewonnene Rennen:" HorizontalAlignment="Left" Margin="216,13,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Verlorene Rennen:" HorizontalAlignment="Left" Margin="216,42,0,0" VerticalAlignment="Top" Width="119"/>
+                    <Label Content="Bisher gesetzt wurden:" HorizontalAlignment="Left" Margin="216,90,0,0" VerticalAlignment="Top"/>
+                    <Label Content="0" x:Name="lbC3GewonneneRennen" HorizontalAlignment="Left" Margin="335,16,0,0" VerticalAlignment="Top"/>
+                    <Label Content="0" x:Name="lbC3VerloreneRennen" HorizontalAlignment="Left" Margin="335,40,0,0" VerticalAlignment="Top"/>
+                    <Label Content="0.0$" x:Name="lbC3GesetztesGeld" HorizontalAlignment="Left" Margin="350,90,0,0" VerticalAlignment="Top"/>
+
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Kentucky" Tag="C4">
+                <Grid>
+                    <Label Content="Wette Player 1" HorizontalAlignment="Left" Margin="0,13,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl1}"/>
+                    <Label Content="Wette Player 2" HorizontalAlignment="Left" Margin="0,39,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}"/>
+                    <Label Content="Wette Player 3" HorizontalAlignment="Left" Margin="0,65,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}"/>
+                    <Label Content="Wette Player 4" HorizontalAlignment="Left" Margin="0,91,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}"/>
+                    <TextBox x:Name="txWetteC4Pl1" Tag="Pl1" HorizontalAlignment="Left" Height="23" Margin="87,16,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="87" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl1}" PreviewTextInput="txWette_PreviewTextInput" TextChanged="txWette_TextChanged"/>
+                    <TextBox x:Name="txWetteC4Pl2" Tag="Pl2" HorizontalAlignment="Left" Height="23" Margin="87,42,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="87" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}" PreviewTextInput="txWette_PreviewTextInput" TextChanged="txWette_TextChanged"/>
+                    <TextBox x:Name="txWetteC4Pl3" Tag="Pl3" HorizontalAlignment="Left" Height="23" Margin="87,67,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="87" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}" PreviewTextInput="txWette_PreviewTextInput" TextChanged="txWette_TextChanged"/>
+                    <TextBox x:Name="txWetteC4Pl4" Tag="Pl4" HorizontalAlignment="Left" Height="23" Margin="87,93,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="87" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}" PreviewTextInput="txWette_PreviewTextInput" TextChanged="txWette_TextChanged"/>
+                    <Label Content="$" HorizontalAlignment="Left" Margin="174,13,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl1}"/>
+                    <Label Content="$" HorizontalAlignment="Left" Margin="174,39,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl2}"/>
+                    <Label Content="$" HorizontalAlignment="Left" Margin="174,65,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl3}"/>
+                    <Label Content="$" HorizontalAlignment="Left" Margin="174,91,0,0" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=chkEnabledPl4}"/>
+                    <Label Content="Gewonnene Rennen:" HorizontalAlignment="Left" Margin="216,13,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Verlorene Rennen:" HorizontalAlignment="Left" Margin="216,42,0,0" VerticalAlignment="Top" Width="119"/>
+                    <Label Content="Bisher gesetzt wurden:" HorizontalAlignment="Left" Margin="216,90,0,0" VerticalAlignment="Top"/>
+                    <Label Content="0" x:Name="lbC4GewonneneRennen" HorizontalAlignment="Left" Margin="335,16,0,0" VerticalAlignment="Top"/>
+                    <Label Content="0" x:Name="lbC4VerloreneRennen" HorizontalAlignment="Left" Margin="335,40,0,0" VerticalAlignment="Top"/>
+                    <Label Content="0.0$" x:Name="lbC4GesetztesGeld" HorizontalAlignment="Left" Margin="350,90,0,0" VerticalAlignment="Top"/>
+
+                </Grid>
+
+            </TabItem>
+
+        </TabControl>
+        <Label Content="Hühner" HorizontalAlignment="Left" Margin="543,187,0,0" VerticalAlignment="Top"/>
+        <Label Content="Spieler" HorizontalAlignment="Left" Margin="543,10,0,0" VerticalAlignment="Top"/>
+        <Button Content="Starte Rennen" Name="bnStartRennen" HorizontalAlignment="Left" Margin="10,325,0,0" VerticalAlignment="Top" Width="101" Click="bnStartRennen_Click"/>
 
     </Grid>
 </Window>
